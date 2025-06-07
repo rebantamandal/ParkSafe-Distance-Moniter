@@ -44,7 +44,7 @@ The objective of this project is to measure distance using an ultrasonic sensor 
 
 ## Author(s)
 
-- Your Name Here (you can update this section)
+- Rebanta Mandal
 
 ## License
 
