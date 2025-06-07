@@ -1,52 +1,51 @@
-# Ultrasonic-Sensor-Embedded-Systems-
+# LPC1768 with Ultrasonic Sensor
 
-This project demonstrates how to use an LPC1768 microcontroller with an HC-SR04 ultrasonic sensor for accurate, non-contact distance measurement. The system can detect objects from 2 cm to 400 cm away by timing ultrasonic echoes.
+This embedded system project demonstrates how to interface an ultrasonic sensor with the LPC1768 microcontroller. The measured distance is displayed on an alphanumeric LCD using C language and standard peripheral libraries.
+
+## Project Summary
+
+The objective of this project is to measure distance using an ultrasonic sensor (like HC-SR04) and display the result on an LCD. It is built for the NXP LPC1768 ARM Cortex-M3 microcontroller and is ideal for learning real-time embedded applications involving timers, I/O ports, and sensor integration.
 
 ## Features
 
-- Accurate distance measurement (2 cm to 400 cm)
-- Non-contact sensing
-- Easy integration with microcontrollers
+- Interfacing of HC-SR04 ultrasonic sensor with LPC1768
+- Display measured distance on a 16x2 LCD
+- Timer-based pulse width measurement
+- Modular code structure
 
-## How It Works
+## Technologies Used
 
-1. The LPC1768 sends a trigger pulse to the HC-SR04 sensor.
-2. The sensor emits an ultrasonic sound wave.
-3. When the wave reflects off an object, the sensor receives the echo.
-4. The LPC1768 measures the time between sending and receiving the signal.
-5. Distance is calculated using the formula:  
-   `Distance (cm) = Time (μs) / 58`
+- C Programming
+- NXP LPC1768 Microcontroller
+- ARM Cortex-M3 Architecture
+- Ultrasonic Sensor (HC-SR04)
+- Alphanumeric LCD (16x2)
 
-## Applications
+## File Structure
 
-- Robotics navigation
-- Obstacle detection
-- Liquid level sensing
-- Automation systems
+- `code.c` – Main logic for sensor interfacing and measurement
+- `AN_LCD.c` – LCD initialization and control functions
+- `README.md` – Project documentation
 
-## Hardware Required
+## How to Run
 
-- LPC1768 microcontroller
-- HC-SR04 ultrasonic sensor
-- Jumper wires
-- Breadboard or PCB
+1. Open the project in Keil µVision or any compatible ARM development environment.
+2. Connect the LPC1768 to the ultrasonic sensor and LCD as per your hardware schematic.
+3. Compile and flash the program to the LPC1768.
+4. View distance readings on the LCD.
 
-## Wiring
+## Hardware Requirements
 
-| HC-SR04 Pin | LPC1768 Pin | Description      |
-|-------------|-------------|------------------|
-| VCC         | 5V          | Power supply     |
-| GND         | GND         | Ground           |
-| Trig        | GPIO (e.g., P2.0) | Trigger pulse    |
-| Echo        | GPIO (e.g., P2.1) | Echo response    |
+- NXP LPC1768 microcontroller
+- Ultrasonic Sensor (HC-SR04)
+- 16x2 Alphanumeric LCD
+- Jumper wires and breadboard
+- Power supply (5V)
 
-## Usage
+## Author(s)
 
-1. Connect the hardware as described above.
-2. Upload the firmware to the LPC1768.
-3. Power on the system.
-4. The measured distance will be available for further processing or display.
+- Your Name Here (you can update this section)
 
 ## License
 
-This project is open-source and free to use for educational and non-commercial purposes.
+This project is open-source and licensed under the MIT License.
