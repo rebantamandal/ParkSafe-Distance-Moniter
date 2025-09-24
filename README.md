@@ -1,51 +1,111 @@
-# LPC1768 with Ultrasonic Sensor
+# ParkSafe Distance Monitor
 
-This embedded system project demonstrates how to interface an ultrasonic sensor with the LPC1768 microcontroller. The measured distance is displayed on an alphanumeric LCD using C language and standard peripheral libraries.
+An embedded system project developed on the NXP LPC1768 ARM Cortex-M3 microcontroller to measure distance using an ultrasonic sensor (HC-SR04) and display it on a 16x2 LCD. The system enhances parking safety by providing real-time distance monitoring with LED and buzzer alerts.
 
-## Project Summary
+---
 
-The objective of this project is to measure distance using an ultrasonic sensor (like HC-SR04) and display the result on an LCD. It is built for the NXP LPC1768 ARM Cortex-M3 microcontroller and is ideal for learning real-time embedded applications involving timers, I/O ports, and sensor integration.
+## 📖 Abstract
 
-## Features
+The **ParkSafe Distance Monitor** is a parking safety solution designed to improve vehicle safety in congested areas. Using the HC-SR04 ultrasonic sensor, it measures the distance between vehicles and displays the result on an LCD. Smart alerts through LEDs and a buzzer are triggered when vehicles are too close, ensuring safer parking practices. This system is aligned with **Sustainable Development Goal 11 (Sustainable Cities and Communities)**, promoting safer and more efficient urban spaces.
 
-- Interfacing of HC-SR04 ultrasonic sensor with LPC1768
-- Display measured distance on a 16x2 LCD
-- Timer-based pulse width measurement
-- Modular code structure
+---
 
-## Technologies Used
+## 🚗 Introduction
 
-- C Programming
-- NXP LPC1768 Microcontroller
-- ARM Cortex-M3 Architecture
-- Ultrasonic Sensor (HC-SR04)
-- Alphanumeric LCD (16x2)
+The project aims to develop a **real-time parking distance monitoring system** using the LPC1768 microcontroller and ultrasonic sensing. The measured distance is displayed on a **16x2 alphanumeric LCD**, and alerts are generated through:
 
-## File Structure
+- **LEDs** (Safe, Warning, Danger zones)  
+- **Buzzer** (activated at unsafe proximity < 10 cm)  
 
-- `code.c` – Main logic for sensor interfacing and measurement
-- `AN_LCD.c` – LCD initialization and control functions
-- `README.md` – Project documentation
+This ensures that drivers receive **instant feedback** during parking, reducing risks of collisions and vehicle damage.  
 
-## How to Run
+---
 
-1. Open the project in Keil µVision or any compatible ARM development environment.
-2. Connect the LPC1768 to the ultrasonic sensor and LCD as per your hardware schematic.
-3. Compile and flash the program to the LPC1768.
-4. View distance readings on the LCD.
+## ⚙️ System Requirements
 
-## Hardware Requirements
+### Hardware
+- **NXP LPC1768 ARM Cortex-M3 Board** – Main controller  
+- **HC-SR04 Ultrasonic Sensor** – Distance measurement (2–400 cm, ±0.5 cm accuracy)  
+- **16x2 Alphanumeric LCD** – Displays distance readings  
+- **LEDs (Red/Yellow/Green)** – Visual zone indicators  
+- **Buzzer** – Audible proximity alert  
+- **Power Supply (5V)**  
+- Breadboard, jumper wires, USB interface for programming  
 
-- NXP LPC1768 microcontroller
-- Ultrasonic Sensor (HC-SR04)
-- 16x2 Alphanumeric LCD
-- Jumper wires and breadboard
-- Power supply (5V)
+### Software
+- **Keil µVision IDE** – Development and debugging  
+- **Embedded C** – Programming language  
+- **Flash Magic** – To flash firmware onto LPC1768  
 
-## Author(s)
+---
 
-- Rebanta Mandal
+## 🔄 Working Principle
 
-## License
+1. **Trigger Pulse**: LPC1768 sends a 10 µs pulse to the HC-SR04 TRIG pin.  
+2. **Echo Reception**: The sensor transmits ultrasonic bursts and waits for the echo.  
+3. **Time Measurement**: The duration of the ECHO signal (high pulse width) is measured using Timer0.  
+4. **Distance Calculation**:  
+   \[
+   \text{Distance (cm)} = \frac{\text{Time (µs)} \times 0.0343}{2}
+   \]  
+5. **Output Response**:  
+   - Safe Zone (>20 cm) → No alert  
+   - Warning Zone (15–20 cm) → LED ON  
+   - Danger Zone (<10 cm) → LED + Buzzer ON  
 
-This project is open-source and licensed under the MIT License.
+---
+
+## 📂 File Structure
+
+- `code.c` – Main logic (sensor interfacing, distance measurement, alerts)  
+- `AN_LCD.c` – LCD driver functions (initialization, commands, data writing)  
+- `README.md` – Documentation (this file)  
+
+---
+
+## 🖥️ How to Run
+
+1. Connect LPC1768 with HC-SR04, LCD, LEDs, and Buzzer as per the circuit diagram.  
+2. Open project in **Keil µVision**.  
+3. Compile and flash the program to LPC1768 using **Flash Magic**.  
+4. Power the board (5V supply).  
+5. Observe live distance readings on LCD and alerts via LED/buzzer.  
+
+---
+
+## 📊 Results
+
+- **>20 cm** → Safe zone (No alerts)  
+- **15–20 cm** → LED alert (Warning)  
+- **10–15 cm** → LED alert (Closer warning)  
+- **<10 cm** → LED + Buzzer alert (Danger)  
+
+This ensures reliable distance monitoring and proactive collision prevention.  
+
+---
+
+## ✅ Conclusion
+
+The **ParkSafe Distance Monitor** integrates **ultrasonic sensing, real-time LCD display, and smart alert mechanisms** to create a practical parking safety system. It minimizes vehicle damage, ensures safe parking practices, and contributes to **sustainable smart city solutions**.  
+
+---
+
+## 🔮 Future Scope
+
+- Integration with **smart city infrastructure**  
+- Mobile app for **remote monitoring**  
+- Use of **LiDAR/IR sensors** for higher accuracy  
+- **Machine Learning algorithms** for predictive parking assistance  
+- Adaptation for **warehouses, construction sites, and public spaces**  
+
+---
+
+## 👨‍💻 Author(s)
+
+- Rebanta Mandal  
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.  
