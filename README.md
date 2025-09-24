@@ -4,13 +4,13 @@ An embedded system project developed on the NXP LPC1768 ARM Cortex-M3 microcontr
 
 ---
 
-## 📖 Abstract
+## Abstract
 
 The **ParkSafe Distance Monitor** is a parking safety solution designed to improve vehicle safety in congested areas. Using the HC-SR04 ultrasonic sensor, it measures the distance between vehicles and displays the result on an LCD. Smart alerts through LEDs and a buzzer are triggered when vehicles are too close, ensuring safer parking practices. This system is aligned with **Sustainable Development Goal 11 (Sustainable Cities and Communities)**, promoting safer and more efficient urban spaces.
 
 ---
 
-## 🚗 Introduction
+## Introduction
 
 The project aims to develop a **real-time parking distance monitoring system** using the LPC1768 microcontroller and ultrasonic sensing. The measured distance is displayed on a **16x2 alphanumeric LCD**, and alerts are generated through:
 
@@ -21,7 +21,7 @@ This ensures that drivers receive **instant feedback** during parking, reducing 
 
 ---
 
-## ⚙️ System Requirements
+## System Requirements
 
 ### Hardware
 - **NXP LPC1768 ARM Cortex-M3 Board** – Main controller  
@@ -55,7 +55,7 @@ This ensures that drivers receive **instant feedback** during parking, reducing 
 
 ---
 
-## 📂 File Structure
+## File Structure
 
 - `code.c` – Main logic (sensor interfacing, distance measurement, alerts)  
 - `AN_LCD.c` – LCD driver functions (initialization, commands, data writing)  
@@ -63,7 +63,7 @@ This ensures that drivers receive **instant feedback** during parking, reducing 
 
 ---
 
-## 🖥️ How to Run
+## How to Run
 
 1. Connect LPC1768 with HC-SR04, LCD, LEDs, and Buzzer as per the circuit diagram.  
 2. Open project in **Keil µVision**.  
@@ -73,7 +73,7 @@ This ensures that drivers receive **instant feedback** during parking, reducing 
 
 ---
 
-## 📊 Results
+## Results
 
 - **>20 cm** → Safe zone (No alerts)  
 - **15–20 cm** → LED alert (Warning)  
@@ -84,13 +84,13 @@ This ensures reliable distance monitoring and proactive collision prevention.
 
 ---
 
-## ✅ Conclusion
+## onclusion
 
 The **ParkSafe Distance Monitor** integrates **ultrasonic sensing, real-time LCD display, and smart alert mechanisms** to create a practical parking safety system. It minimizes vehicle damage, ensures safe parking practices, and contributes to **sustainable smart city solutions**.  
 
 ---
 
-## 🔮 Future Scope
+## Future Scope
 
 - Integration with **smart city infrastructure**  
 - Mobile app for **remote monitoring**  
@@ -100,12 +100,12 @@ The **ParkSafe Distance Monitor** integrates **ultrasonic sensing, real-time LCD
 
 ---
 
-## 👨‍💻 Author(s)
+## Author(s)
 
 - Rebanta Mandal  
 
 ---
 
-## 📜 License
+## License
 
 This project is licensed under the **MIT License**.  
