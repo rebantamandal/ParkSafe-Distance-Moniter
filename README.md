@@ -39,7 +39,7 @@ This ensures that drivers receive **instant feedback** during parking, reducing 
 
 ---
 
-## 🔄 Working Principle
+## Working Principle
 
 1. **Trigger Pulse**: LPC1768 sends a 10 µs pulse to the HC-SR04 TRIG pin.  
 2. **Echo Reception**: The sensor transmits ultrasonic bursts and waits for the echo.  
@@ -84,7 +84,7 @@ This ensures reliable distance monitoring and proactive collision prevention.
 
 ---
 
-## onclusion
+## Conclusion
 
 The **ParkSafe Distance Monitor** integrates **ultrasonic sensing, real-time LCD display, and smart alert mechanisms** to create a practical parking safety system. It minimizes vehicle damage, ensures safe parking practices, and contributes to **sustainable smart city solutions**.  
 
